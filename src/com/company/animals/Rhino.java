@@ -1,6 +1,8 @@
-package com.company;
+package com.company.animals;
 
-public class Rhino extends Animal{
+import com.company.animals.Animal;
+
+public class Rhino extends Animal {
     private double hornSize;
     private String type;
     private boolean isEndangered;

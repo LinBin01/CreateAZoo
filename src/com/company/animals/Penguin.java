@@ -1,6 +1,8 @@
-package com.company;
+package com.company.animals;
 
-public class Penguin extends Animal{
+import com.company.animals.Animal;
+
+public class Penguin extends Animal {
     private String type;
     private String featherType;
     private double wingSpan;

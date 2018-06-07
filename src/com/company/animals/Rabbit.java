@@ -1,6 +1,8 @@
-package com.company;
+package com.company.animals;
 
-public class Rabbit extends Animal{
+import com.company.animals.Animal;
+
+public class Rabbit extends Animal {
     private double earLength;
     private String furColor;
     private String favoriteFood;
