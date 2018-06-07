@@ -1,10 +1,10 @@
 package com.company;
 
 public class Animal {
-    String name;
-    String location;
-    char gender;
-    double weight;
+    private String name;
+    private String location;
+    private char gender;
+    private double weight;
 
     public Animal(String name, String location, char gender, double weight){
         this.name = name;
@@ -31,10 +31,6 @@ public class Animal {
 
     public char getGender() {
         return gender;
-    }
-
-    public void setGender(char gender) {
-        this.gender = gender;
     }
 
     public double getWeight() {
