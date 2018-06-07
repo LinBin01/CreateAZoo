@@ -17,10 +17,6 @@ public class Employee extends People {
         return employeeNUmber;
     }
 
-    public void setEmployeeNUmber(int employeeNumber) {
-        this.employeeNUmber = employeeNumber;
-    }
-
     public String getJobTitle() {
         return jobTitle;
     }

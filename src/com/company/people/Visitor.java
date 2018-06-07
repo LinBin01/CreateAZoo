@@ -29,7 +29,7 @@ public class Visitor extends People{
         this.allergies = allergies;
     }
 
-    public boolean isMembership() {
+    public boolean hasMembership() {
         return membership;
     }
 
