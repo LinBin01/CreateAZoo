@@ -36,4 +36,8 @@ public class Employee extends People {
     public void setHours(int hours) {
         Hours = hours;
     }
+
+    @Override
+    public void infoPeople(){}
+
 }

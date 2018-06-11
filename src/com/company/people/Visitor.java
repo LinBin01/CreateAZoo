@@ -44,4 +44,9 @@ public class Visitor extends People{
     public void setHomeAddress(String homeAddress) {
         this.homeAddress = homeAddress;
     }
+
+    @Override
+    public void infoPeople(){
+        System.out.println("age: " + getAge() + ", " + "name: " + getName() + ", " + "gender: " + getGender() + ", " + "race: " + getRace() + ", " + "groupSize: " + getGroupSize() + ", " + "membership: " + hasMembership() + ", " + "address: " + getHomeAddress());
+    }
 }

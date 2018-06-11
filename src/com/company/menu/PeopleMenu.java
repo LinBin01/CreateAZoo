@@ -1,6 +1,5 @@
 package com.company.menu;
 import com.company.people.*;
-
 import java.util.InputMismatchException;
 
 public class PeopleMenu extends Menu{
@@ -20,7 +19,6 @@ public class PeopleMenu extends Menu{
                     Menu mainMenu = new Menu();
                     mainMenu.mainMenu();
                     break;
-
                 case 4:
                     System.out.println("Thank You!");
                     System.exit(0);
@@ -74,7 +72,7 @@ public class PeopleMenu extends Menu{
     }
 
     public void manageEmployee() {
-        System.out.println("\n1. to Add" + "\n2. to View" + "\n3. to Remove" + "\n4. Back" + "\n5. Exit");
+        System.out.println("\nEmployees:" + "\n1. to Add" + "\n2. to View" + "\n3. to Remove" + "\n4. to Edit" + "\n5. Back" + "\n6. Exit");
         try {
             switch (input.nextInt()) {
                 case 1:
@@ -90,10 +88,13 @@ public class PeopleMenu extends Menu{
                     removeEmployee();
                     break;
                 case 4:
+                    editEmployee();
+                    break;
+                case 5:
                     // back
                     managePeople();
                     break;
-                case 5:
+                case 6:
                     // exit
                     System.out.println("Thank You!");
                     System.exit(0);
@@ -108,6 +109,10 @@ public class PeopleMenu extends Menu{
                 input.nextLine();
                 manageEmployee();
         }
+    }
+
+    private void editEmployee() {
+
     }
 
 
@@ -137,9 +142,9 @@ public class PeopleMenu extends Menu{
         try{
             System.out.println("Age?");
             int age = input.nextInt();
-            System.out.println("Name?");
-            String name = input.next();
             input.nextLine();
+            System.out.println("Name?");
+            String name = input.nextLine();
             System.out.println("Gender?");
             char gender = input.nextLine().charAt(0);
             System.out.println("Race?");
@@ -149,9 +154,22 @@ public class PeopleMenu extends Menu{
             System.out.println("Do you have membership?");
             boolean membership = input.nextBoolean();
             System.out.println("Your Address?");
+            input.nextLine();
             String homeAddress = input.nextLine();
             Visitor newVisit = new Visitor(age, name, gender, race, groupSize, membership, homeAddress);
             people.add(newVisit);
+            System.out.println("Adding Successfully!");
+            System.out.println("Type '1' to add another visitor or '2' to move back to last menu, or any other number to terminate");
+            switch(input.nextInt()){
+                case 1:
+                    addVisitor();
+                    break;
+                case 2:
+                    manageVisitor();
+                    break;
+                default:
+                    System.exit(0);
+            }
         }catch(InputMismatchException exception){
             System.out.println("Invalid Entries! Please retype your information and make sure it is in correct type!");
             input.nextLine();

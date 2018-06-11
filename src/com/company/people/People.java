@@ -36,4 +36,8 @@ public class People {
     public String getRace() {
         return race;
     }
+
+    public void infoPeople(){
+
+    }
 }
