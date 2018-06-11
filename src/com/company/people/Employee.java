@@ -1,20 +1,24 @@
 package com.company.people;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Employee extends People {
-    private int employeeNUmber;
+    private int employeeNumber;
     private String jobTitle;
     private String hireDay;
     private int Hours;
 
-    public Employee(int age, String name, char gender, String race, int employeeNUmber, String jobTitle, String hireDay) {
+    protected List<Employee> employees = new ArrayList<>();
+
+    public Employee(int age, String name, char gender, String race, int employeeNumber, String jobTitle, String hireDay) {
         super(age, name, gender, race);
-        this.employeeNUmber = employeeNUmber;
+        this.employeeNumber = employeeNumber;
         this.jobTitle = jobTitle;
         this.hireDay = hireDay;
     }
 
     public int getEmployeeNUmber() {
-        return employeeNUmber;
+        return employeeNumber;
     }
 
     public String getJobTitle() {
