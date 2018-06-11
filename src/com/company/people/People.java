@@ -6,6 +6,11 @@ public class People {
     private char gender;
     private String race;
 
+    //default constructor
+    public People(){
+
+    }
+
     public People(int age, String name, char gender, String race) {
         this.age = age;
         this.name = name;

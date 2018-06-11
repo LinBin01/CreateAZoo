@@ -6,6 +6,7 @@ import java.util.InputMismatchException;
 
 public class PeopleMenu extends Menu {
 
+
     protected void managePeople() {
         // add, view, or remove people
         System.out.println("\n1. Employees" + "\n2. Visitors" + "\n3. Back" + "\n4. Exit");
@@ -142,9 +143,9 @@ public class PeopleMenu extends Menu {
             String jobTitle = input.nextLine();
             System.out.println("Hire Day?");
             String hireDay = input.nextLine();
+            // TODO fixing arrayList duplicates
             Employee newEmploy = new Employee(age, name, gender, race, employeeNumber, jobTitle, hireDay);
-            people.add(newEmploy);
-            System.out.println("Adding Successfully!");
+            newEmploy.addEmployee(newEmploy);
             System.out.println("Type '1' to add another employee or '2' to move back to last menu, or '3' to go back to the main menu , or any other number to terminate");
             switch (input.nextInt()) {
                 case 1:
@@ -206,6 +207,7 @@ public class PeopleMenu extends Menu {
             System.out.println("Your Address?");
             input.nextLine();
             String homeAddress = input.nextLine();
+            // TODO fixing this part
             Visitor newVisit = new Visitor(age, name, gender, race, groupSize, membership, homeAddress);
             people.add(newVisit);
             System.out.println("Adding Successfully!");

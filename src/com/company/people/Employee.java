@@ -10,6 +10,10 @@ public class Employee extends People {
 
     protected List<Employee> employees = new ArrayList<>();
 
+    public Employee(){
+
+    }
+
     public Employee(int age, String name, char gender, String race, int employeeNumber, String jobTitle, String hireDay) {
         super(age, name, gender, race);
         this.employeeNumber = employeeNumber;
@@ -39,6 +43,11 @@ public class Employee extends People {
 
     public void setHours(int hours) {
         Hours = hours;
+    }
+
+    public void addEmployee(Employee object){
+        employees.add(object);
+        System.out.println(object.getName() + " has been added");
     }
 
     @Override
