@@ -1,4 +1,5 @@
 package com.company.people;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +11,7 @@ public class Employee extends People {
 
     protected List<Employee> employees = new ArrayList<>();
 
-    public Employee(){
+    public Employee() {
 
     }
 
@@ -45,12 +46,18 @@ public class Employee extends People {
         Hours = hours;
     }
 
-    public void addEmployee(Employee object){
+    public void addEmployee(Employee object) {
         employees.add(object);
         System.out.println(object.getName() + " has been added");
     }
 
-    @Override
-    public void infoPeople(){}
+    public void viewEmployees() {
+        for (int i = 0; i < employees.size(); i++) {
+            System.out.println("EmployeeNumber: " + employees.get(i).getEmployeeNUmber() + "; " + "Name: " + employees.get(i).getName() + "; "
+                    + "Age: " + employees.get(i).getAge() + "; " + "Gender: " + employees.get(i).getGender() + "; " + "JobTitle: " + employees.get(i).getJobTitle() + "; " + "Race: " + employees.get(i).getRace() + "; "
+                    + "HireDay: " + employees.get(i).getHireDay());
+        }
+    }
+
 
 }

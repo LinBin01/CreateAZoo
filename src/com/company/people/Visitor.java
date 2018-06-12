@@ -1,10 +1,19 @@
 package com.company.people;
 
-public class Visitor extends People{
+import java.util.ArrayList;
+import java.util.List;
+
+public class Visitor extends People {
     private int groupSize;
     private String allergies;
     private boolean membership;
     private String homeAddress;
+
+    protected List<Visitor> visitors = new ArrayList<>();
+
+    public Visitor() {
+
+    }
 
     public Visitor(int age, String name, char gender, String race, int groupSize, boolean membership, String homeAddress) {
         super(age, name, gender, race);
@@ -45,8 +54,8 @@ public class Visitor extends People{
         this.homeAddress = homeAddress;
     }
 
-    @Override
-    public void infoPeople(){
-        System.out.println("age: " + getAge() + ", " + "name: " + getName() + ", " + "gender: " + getGender() + ", " + "race: " + getRace() + ", " + "groupSize: " + getGroupSize() + ", " + "membership: " + hasMembership() + ", " + "address: " + getHomeAddress());
+    public void addVisitor(Visitor object) {
+        visitors.add(object);
+        System.out.println(object.getName() + " has been added");
     }
 }

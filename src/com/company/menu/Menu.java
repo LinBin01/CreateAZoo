@@ -1,18 +1,14 @@
 package com.company.menu;
 
-import com.company.people.*;
-import com.company.inventory.*;
-import com.company.animals.*;
+//import com.company.people.*;
+//import com.company.inventory.*;
+//import com.company.animals.*;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class Menu {
 
     protected  Scanner input = new Scanner(System.in);
-    protected ArrayList<People> people = new ArrayList();
-    protected ArrayList<Animal> animals = new ArrayList();
-    protected ArrayList<Items> items = new ArrayList();
 
     public void mainMenu(){
 

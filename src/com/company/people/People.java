@@ -42,7 +42,4 @@ public class People {
         return race;
     }
 
-    public void infoPeople(){
-
-    }
 }

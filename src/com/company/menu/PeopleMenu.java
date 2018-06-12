@@ -5,7 +5,8 @@ import com.company.people.*;
 import java.util.InputMismatchException;
 
 public class PeopleMenu extends Menu {
-
+    private Employee allEmployees = new Employee();
+    private Visitor allVisitors = new Visitor();
 
     protected void managePeople() {
         // add, view, or remove people
@@ -143,9 +144,8 @@ public class PeopleMenu extends Menu {
             String jobTitle = input.nextLine();
             System.out.println("Hire Day?");
             String hireDay = input.nextLine();
-            // TODO fixing arrayList duplicates
             Employee newEmploy = new Employee(age, name, gender, race, employeeNumber, jobTitle, hireDay);
-            newEmploy.addEmployee(newEmploy);
+            allEmployees.addEmployee(newEmploy);
             System.out.println("Type '1' to add another employee or '2' to move back to last menu, or '3' to go back to the main menu , or any other number to terminate");
             switch (input.nextInt()) {
                 case 1:
@@ -168,7 +168,26 @@ public class PeopleMenu extends Menu {
     }
 
     private void viewEmployee() {
-
+        allEmployees.viewEmployees();
+        System.out.println("Type '1' to return to the previous menu, or '2' to view this list again; Type '3' to return to the main menu, or any other numbers to exit the program");
+        try {
+            switch (input.nextInt()) {
+                case 1:
+                    manageEmployee();
+                    break;
+                case 2:
+                    viewEmployee();
+                    break;
+                case 3:
+                    mainMenu();
+                    break;
+                default:
+                    System.exit(0);
+            }
+        } catch (InputMismatchException exception) {
+            System.out.println("Invalid Number of Entry! The program automatically returns to the previous menu");
+            manageEmployee();
+        }
     }
 
     private void removeEmployee() {
@@ -207,10 +226,8 @@ public class PeopleMenu extends Menu {
             System.out.println("Your Address?");
             input.nextLine();
             String homeAddress = input.nextLine();
-            // TODO fixing this part
             Visitor newVisit = new Visitor(age, name, gender, race, groupSize, membership, homeAddress);
-            people.add(newVisit);
-            System.out.println("Adding Successfully!");
+            allVisitors.addVisitor(newVisit);
             System.out.println("Type '1' to add another visitor or '2' to move back to last menu, or '3' to go back to the main menu , or any other number to terminate");
             switch (input.nextInt()) {
                 case 1:
