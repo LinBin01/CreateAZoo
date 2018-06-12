@@ -1,6 +1,7 @@
 package com.company.menu;
 
 import com.company.people.*;
+
 import java.util.InputMismatchException;
 
 public class PeopleMenu extends Menu {
@@ -190,9 +191,27 @@ public class PeopleMenu extends Menu {
         }
     }
 
-    // TODO finish
-    private void removeEmployee() {
 
+    private void removeEmployee() {
+        System.out.println("Please Enter the EmployeeNumber associated With the Employee You Want to Remove");
+        try {
+            allEmployees.removeEmployee(input.nextInt());
+            System.out.println("Type '1' to remove other employee, or any other numbers to return to the previous menu");
+            switch (input.nextInt()) {
+                case 1:
+                    removeEmployee();
+                    break;
+                default:
+                    manageEmployee();
+                    break;
+
+            }
+
+        } catch (InputMismatchException exception) {
+            System.out.println("Invalid Entry! Please Try Again!");
+            input.nextLine();
+            removeEmployee();
+        }
     }
 
     // TODO finish
@@ -200,9 +219,26 @@ public class PeopleMenu extends Menu {
 
     }
 
-    // TODO finish
     private void removeVisitor() {
+        System.out.println("Please Enter the Name associated With the Visitor You Want to Remove");
+        try {
+            allVisitors.removeVisitor(input.nextLine());
+            System.out.println("Type '1' to remove other visitor, or any other numbers to return to the previous menu");
+            switch (input.nextInt()) {
+                case 1:
+                    removeVisitor();
+                    break;
+                default:
+                    manageVisitor();
+                    break;
 
+            }
+
+        } catch (InputMismatchException exception) {
+            System.out.println("Invalid Entry! Please Try Again!");
+            input.nextLine();
+            removeVisitor();
+        }
     }
 
     private void viewVisitor() {

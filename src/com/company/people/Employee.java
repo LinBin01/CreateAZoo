@@ -51,6 +51,22 @@ public class Employee extends People {
         System.out.println(object.getName() + " has been added");
     }
 
+    public void removeEmployee(int employeeNumber) {
+        int index = -1;
+        for (int i = 0; i < employees.size(); i++) {
+            if (employeeNumber == employees.get(i).getEmployeeNUmber()) {
+                index = i;
+                break;
+            }
+        }
+        if (index != -1) {
+            System.out.println(employees.get(index).getName() + " has been removed");
+            employees.remove(index);
+        } else {
+            System.out.println("No Records With Associated EmployeeNumber!");
+        }
+    }
+
     public void viewEmployees() {
         for (int i = 0; i < employees.size(); i++) {
             System.out.println("EmployeeNumber: " + employees.get(i).getEmployeeNUmber() + "; " + "Name: " + employees.get(i).getName() + "; "

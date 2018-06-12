@@ -59,6 +59,22 @@ public class Visitor extends People {
         System.out.println(object.getName() + " has been added");
     }
 
+    public void removeVisitor(String name) {
+        int index = -1;
+        for (int i = 0; i < visitors.size(); i++) {
+            if (name == visitors.get(i).getName()) {
+                index = i;
+                break;
+            }
+        }
+        if (index != -1) {
+            System.out.println(visitors.get(index).getName() + " has been removed");
+            visitors.remove(index);
+        } else {
+            System.out.println("No Records of Visitors With This Name!");
+        }
+    }
+
     public void viewVisitors() {
         for (int i = 0; i < visitors.size(); i++) {
             System.out.println("Name: " + visitors.get(i).getName() + "; " + "Age: " + visitors.get(i).getAge() + "; "
