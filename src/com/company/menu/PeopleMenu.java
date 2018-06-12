@@ -1,7 +1,6 @@
 package com.company.menu;
 
 import com.company.people.*;
-
 import java.util.InputMismatchException;
 
 public class PeopleMenu extends Menu {
@@ -120,6 +119,7 @@ public class PeopleMenu extends Menu {
         }
     }
 
+    // TODO finish
     private void editEmployee() {
 
     }
@@ -190,20 +190,42 @@ public class PeopleMenu extends Menu {
         }
     }
 
+    // TODO finish
     private void removeEmployee() {
 
     }
 
-
+    // TODO finish
     private void editVisitor() {
 
     }
 
+    // TODO finish
     private void removeVisitor() {
 
     }
 
     private void viewVisitor() {
+        allVisitors.viewVisitors();
+        System.out.println("Type '1' to return to the previous menu, or '2' to view this list again; Type '3' to return to the main menu, or any other numbers to exit the program");
+        try {
+            switch (input.nextInt()) {
+                case 1:
+                    manageVisitor();
+                    break;
+                case 2:
+                    viewVisitor();
+                    break;
+                case 3:
+                    mainMenu();
+                    break;
+                default:
+                    System.exit(0);
+            }
+        } catch (InputMismatchException exception) {
+            System.out.println("Invalid Number of Entry! The program automatically returns to the previous menu");
+            manageVisitor();
+        }
 
     }
 

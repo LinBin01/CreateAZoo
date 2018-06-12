@@ -58,4 +58,12 @@ public class Visitor extends People {
         visitors.add(object);
         System.out.println(object.getName() + " has been added");
     }
+
+    public void viewVisitors() {
+        for (int i = 0; i < visitors.size(); i++) {
+            System.out.println("Name: " + visitors.get(i).getName() + "; " + "Age: " + visitors.get(i).getAge() + "; "
+                    + "Gender: " + visitors.get(i).getGender() + "; " + "Race: " + visitors.get(i).getRace() + "; " + "GroupSize: " + visitors.get(i).getGroupSize()
+                    + "; " + "Membership: " + visitors.get(i).hasMembership() + "; " + "HomeAddress: " + visitors.get(i).getHomeAddress());
+        }
+    }
 }
